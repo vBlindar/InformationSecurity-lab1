@@ -1,11 +1,12 @@
 package com.example.shifry_1_laba.entity;
 
+import lombok.Data;
 import lombok.Getter;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-@Getter
+
+@Data
 public class Alphabet {
 
     private final String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
@@ -44,6 +45,23 @@ public class Alphabet {
         frequencyTable.put("щ",0.003);
         frequencyTable.put("э",0.002);
         frequencyTable.put("ф",0.002);
+    }
+
+    public List<String> getShuffleList(){
+        List<String> shuffle = new ArrayList<>();
+        for (char c : alphabet.toCharArray()) {
+            shuffle.add(String.valueOf(c));
+        }
+        Collections.shuffle(shuffle);
+        return shuffle;
+    }
+
+    public List<String> getAlphabetList(){
+        List<String> list = new ArrayList<>();
+        for (char c : alphabet.toCharArray()) {
+            list.add(String.valueOf(c));
+        }
+        return list;
     }
 
 

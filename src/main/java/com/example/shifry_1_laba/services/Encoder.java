@@ -6,13 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
 @Component
-public interface TwoArrays extends Encoder{
-
+public interface Encoder {
     ResponseEntity<String> decodeText(String encoding);
-
-    ResponseEntity<TwoArraysEncode> getEncodeObject(String original);
 
     String getStringResponseEntity(String encoding, List<String> key, List<String> alphabetKey);
 
